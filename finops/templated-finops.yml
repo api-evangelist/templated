@@ -1,0 +1,95 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Templated
+providerId: templated
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: true
+tags:
+- Image Generation
+- PDF Generation
+- Templates
+- Rendering
+- Automation
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Templated spend. Templated bills via monthly subscription
+  plans that bundle a fixed allotment of render credits. Credits are consumed
+  per render: 1 credit per image, 1 credit per PDF page, and a computed credit
+  cost for video based on resolution, frame rate, and duration. Cost is managed
+  by selecting the right plan tier and minimizing wasted renders.
+notes: >-
+  Plan prices and credit allotments are subject to change; verify against the
+  Templated pricing page during reconciliation.
+sources:
+- https://templated.io/pricing
+- https://templated.io/docs/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Templated
+serviceCategory: Media and Content Generation
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+focusColumns:
+  ServiceName: Templated
+  ServiceCategory: Media and Content Generation
+  ProviderName: Templated
+  PublisherName: Templated
+  InvoiceIssuerName: Templated
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription-Based
+meters:
+- name: image_credits
+  description: Credits consumed by image renders, billed 1 credit per image.
+  unit: credits
+  aggregation: sum
+  dimensions:
+  - account
+  - template
+- name: pdf_credits
+  description: Credits consumed by PDF renders, billed 1 credit per page.
+  unit: credits
+  aggregation: sum
+  dimensions:
+  - account
+  - template
+- name: video_credits
+  description: Credits consumed by video renders, computed from resolution, FPS, and duration.
+  unit: credits
+  aggregation: sum
+  dimensions:
+  - account
+  - template
+- name: plan_subscription
+  description: Recurring monthly subscription charge for the selected plan tier.
+  unit: months
+  aggregation: sum
+  dimensions:
+  - account
+  - plan
+principles:
+- name: Visibility
+  description: Track render credit consumption per template and external_id against the monthly plan allotment.
+- name: Allocation
+  description: Tag renders with external_id to attribute credit usage to workloads, customers, or cost centers.
+- name: Optimization
+  description: Right-size the plan tier to expected monthly render volume; avoid redundant renders; batch and merge multi-page output to control credit burn.
+- name: Accountability
+  description: Review monthly credit usage against the plan allotment and assign owners per integration.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,111 @@
+aid: templated
+url: https://raw.githubusercontent.com/api-evangelist/templated/refs/heads/main/apis.yml
+name: Templated
+kind: company
+description: Templated is an API for automated image, video, and PDF generation from
+  reusable templates. Designers build templates in a drag-and-drop editor, then the
+  REST API renders them at scale by overriding layer content, with synchronous and
+  asynchronous rendering, batch and multi-page output, and webhook callbacks.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Image Generation
+- PDF Generation
+- Templates
+- Rendering
+- Automation
+created: '2026-06-25'
+modified: '2026-06-25'
+specificationVersion: '0.19'
+apis:
+- aid: templated:render
+  name: Templated Render API
+  tags:
+  - Render
+  - Image
+  - PDF
+  - Video
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://templated.io/docs/renders/create/
+  baseURL: https://api.templated.io/v1
+  properties:
+  - url: https://templated.io/docs/renders/create/
+    type: Documentation
+  - url: https://templated.io/docs/renders/
+    type: APIReference
+  - url: openapi/templated-openapi.yml
+    type: OpenAPI
+  description: Generates an image, PDF, or video from a template by overriding layer
+    content, with synchronous or asynchronous rendering, batch templates, custom
+    dimensions, transparent backgrounds, multi-page merging, and webhook callbacks.
+- aid: templated:templates
+  name: Templated Templates API
+  tags:
+  - Templates
+  - Layers
+  - Designs
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://templated.io/docs/templates/list/
+  baseURL: https://api.templated.io/v1
+  properties:
+  - url: https://templated.io/docs/templates/list/
+    type: Documentation
+  - url: https://templated.io/docs/templates/retrieve/
+    type: APIReference
+  - url: openapi/templated-openapi.yml
+    type: OpenAPI
+  description: Lists and retrieves Template objects with optional layer and page data,
+    supporting search, tag, dimension, and external-ID filtering plus pagination.
+- aid: templated:renders
+  name: Templated Renders API
+  tags:
+  - Renders
+  - Status
+  - History
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://templated.io/docs/renders/
+  baseURL: https://api.templated.io/v1
+  properties:
+  - url: https://templated.io/docs/renders/
+    type: Documentation
+  - url: https://templated.io/docs/renders/
+    type: APIReference
+  - url: openapi/templated-openapi.yml
+    type: OpenAPI
+  description: Retrieves and lists previously generated Render objects, exposing their
+    status (PENDING, COMPLETED, FAILED), output URL, dimensions, format, and source
+    template.
+- aid: templated:webhooks
+  name: Templated Webhooks API
+  tags:
+  - Webhooks
+  - Async
+  - Callbacks
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://templated.io/docs/renders/create/
+  baseURL: https://api.templated.io/v1
+  properties:
+  - url: https://templated.io/docs/renders/create/
+    type: Documentation
+  - url: openapi/templated-openapi.yml
+    type: OpenAPI
+  description: Asynchronous renders POST the completed Render object to a caller-supplied
+    webhook_url on completion, with optional Base64-encoded JSON metadata for tracking
+    context.
+common:
+- type: GitHubOrganization
+  url: https://github.com/templated-io
+- type: LinkedIn
+  url: https://www.linkedin.com/company/templated-io
+- type: Website
+  url: https://templated.io/
+- type: Documentation
+  url: https://templated.io/docs/
+- type: Plans
+  url: plans/templated-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/templated-rate-limits.yml
+- type: FinOps
+  url: finops/templated-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

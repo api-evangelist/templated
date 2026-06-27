@@ -1,0 +1,116 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Templated
+providerId: templated
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: true
+tags:
+- Image Generation
+- PDF Generation
+- Templates
+- Rendering
+- Automation
+- Plans
+description: >-
+  Templated uses a credit-based subscription model. Each plan includes a
+  monthly allotment of render credits: images cost 1 credit each, PDFs cost
+  1 credit per page, and video cost is computed from resolution, frame rate,
+  and duration. New accounts get a free trial with 50 credits and no credit
+  card required. Paid tiers (Starter, Scale, Enterprise) add larger monthly
+  credit allotments, with up to 20% savings on annual billing.
+notes: >-
+  Prices reflect annual billing as published on the Templated pricing page;
+  monthly billing is higher. Verify the current credit allotments and rates
+  on the pricing page during reconciliation.
+sources:
+- https://templated.io/pricing
+- https://templated.io/docs/
+plans:
+- id: templated-free
+  name: Free Trial
+  type: free
+  description: >-
+    Free trial to evaluate the platform with no credit card required.
+  entries:
+  - label: Render Credits
+    name: free_credits
+    type: limited
+    metric: credits
+    limit: 50
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0
+    userMultiplied: false
+  elements:
+  - name: Render API
+  - name: Templates API
+  - name: Drag-and-Drop Editor
+- id: templated-starter
+  name: Starter
+  type: paid
+  description: >-
+    Entry paid tier with 1,000 render credits per month.
+  entries:
+  - label: Render Credits
+    name: starter_credits
+    type: limited
+    metric: credits
+    limit: 1000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $29 per month (billed annually)
+    userMultiplied: false
+  elements:
+  - name: Render API
+  - name: Templates API
+  - name: Async Rendering
+  - name: Webhooks
+- id: templated-scale
+  name: Scale
+  type: paid
+  description: >-
+    Growth tier with 5,000 render credits per month.
+  entries:
+  - label: Render Credits
+    name: scale_credits
+    type: limited
+    metric: credits
+    limit: 5000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $79 per month (billed annually)
+    userMultiplied: false
+  elements:
+  - name: Render API
+  - name: Templates API
+  - name: Async Rendering
+  - name: Webhooks
+- id: templated-enterprise
+  name: Enterprise
+  type: paid
+  description: >-
+    High-volume tier with 25,000 render credits per month.
+  entries:
+  - label: Render Credits
+    name: enterprise_credits
+    type: limited
+    metric: credits
+    limit: 25000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $179 per month (billed annually)
+    userMultiplied: false
+  elements:
+  - name: Render API
+  - name: Templates API
+  - name: Async Rendering
+  - name: Webhooks
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

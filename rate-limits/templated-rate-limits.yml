@@ -1,0 +1,60 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Templated
+providerId: templated
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Image Generation
+- PDF Generation
+- Templates
+- Rendering
+- Automation
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Templated meters usage primarily through monthly render credits tied to the
+  account subscription plan rather than published per-minute request limits.
+  Images consume 1 credit, PDFs 1 credit per page, and video credit cost is
+  derived from resolution, frame rate, and duration. Synchronous renders
+  complete in roughly 2 seconds; high-volume workloads can use asynchronous
+  rendering with webhook callbacks. Specific per-minute request rate limits
+  are not reconciled in this artifact.
+notes: >-
+  Verify any per-minute or concurrency limits and current monthly credit
+  allotments in the Templated dashboard and documentation on reconciliation;
+  credit allotments scale with the Starter, Scale, and Enterprise plans.
+sources:
+- https://templated.io/docs/
+- https://templated.io/pricing
+responseCodes:
+  throttled: 429
+limits:
+- name: Monthly Render Credits
+  scope: account
+  metric: credits
+  limit: see plan (50 free / 1,000 Starter / 5,000 Scale / 25,000 Enterprise)
+  notes: Images 1 credit, PDFs 1 credit per page, video computed from resolution, FPS, and duration.
+- name: Requests Per Minute (RPM)
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: Per-minute request limits are not publicly published; verify in dashboard.
+- name: Concurrent Renders
+  scope: account
+  metric: renders
+  limit: see provider documentation
+  notes: Synchronous renders complete in ~2 seconds; use async rendering for high throughput.
+policies:
+- name: Credit-Based Metering
+  description: Usage is governed by monthly render credits that scale with the subscription plan.
+- name: Asynchronous Rendering
+  description: Offload high-volume or long-running renders with async and receive a webhook callback on completion.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

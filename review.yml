@@ -1,0 +1,66 @@
+aid: templated
+name: Templated
+review:
+  question: Does Templated expose a documented public WebSocket API?
+  answer: false
+  date: '2026-06-25'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Templated's only event-driven surface
+    is an outbound HTTP webhook callback: when an asynchronous render
+    completes, Templated POSTs the full Render object to the caller-supplied
+    webhook_url. This is a one-way HTTP callback, not a WebSocket or SSE
+    stream, and is already modeled as part of the REST render flow in the
+    OpenAPI document.
+findings:
+  summary: |
+    Templated does not publish a documented public WebSocket API. The
+    platform exposes only REST (HTTPS) endpoints under
+    https://api.templated.io/v1, authenticated with a Bearer API key.
+    Rendering is synchronous by default (around 2 seconds); for longer or
+    high-volume jobs, an asynchronous mode posts the completed Render object
+    to a webhook_url. No realtime, bidirectional WebSocket (ws:// or wss://)
+    endpoint is documented for rendering, templates, or any other product
+    surface as of the review date.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.templated.io/v1
+      documented: true
+    - protocol: Webhook
+      scheme: https
+      note: Outbound HTTP POST of the completed Render object to a caller-supplied webhook_url for async renders. Not WebSocket.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in Templated's API reference, render docs, or any other product page as of the review date.
+  endpointsConfirmedRest:
+    - POST https://api.templated.io/v1/render
+    - GET  https://api.templated.io/v1/render/{id}
+    - DELETE https://api.templated.io/v1/render/{id}
+    - GET  https://api.templated.io/v1/renders
+    - GET  https://api.templated.io/v1/templates
+    - GET  https://api.templated.io/v1/template/{id}
+sources:
+  - url: https://templated.io/docs/
+    type: Documentation
+    note: Overview lists REST base URL https://api.templated.io/v1; no WebSocket mentioned.
+  - url: https://templated.io/docs/authentication/
+    type: Documentation
+    note: API key passed as Authorization Bearer token on all requests.
+  - url: https://templated.io/docs/renders/create/
+    type: APIReference
+    note: Create render is a synchronous or async HTTPS POST; async completion delivered via webhook_url, not WebSocket.
+  - url: https://templated.io/docs/renders/
+    type: Documentation
+    note: Render object and render endpoints are all HTTPS REST.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and the only event-driven behavior
+    is a one-way HTTP webhook callback already covered by the REST render
+    flow. No AsyncAPI document was authored. A dedicated Webhooks API entry
+    documents the async webhook callback in apis.yml.

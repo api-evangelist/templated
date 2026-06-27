@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Templated API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Renders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.templated.io/v1/render",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"template\": \"<string>\",\n  \"layers\": {},\n  \"format\": \"jpg\",\n  \"async\": false,\n  \"webhook_url\": \"<string>\"\n}"
+            }
+          },
+          "docs": "Generates an image, PDF, or video from a template by applying layer overrides, synchronously or asynchronously."
+        },
+        {
+          "info": {
+            "name": "Retrieve a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/render/:id"
+          },
+          "docs": "Retrieves a single Render object referenced by its unique ID."
+        },
+        {
+          "info": {
+            "name": "List all renders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/renders"
+          },
+          "docs": "Lists Render objects in the account with pagination."
+        },
+        {
+          "info": {
+            "name": "Delete a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.templated.io/v1/render/:id"
+          },
+          "docs": "Deletes a Render object referenced by its unique ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/templates"
+          },
+          "docs": "Lists Template objects in the account with search, filtering, and pagination."
+        },
+        {
+          "info": {
+            "name": "Retrieve a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/template/:id"
+          },
+          "docs": "Retrieves a single Template object referenced by its unique ID."
+        }
+      ]
+    }
+  ]
+}

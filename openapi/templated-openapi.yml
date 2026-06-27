@@ -1,0 +1,386 @@
+openapi: 3.0.1
+info:
+  title: Templated API
+  description: >-
+    REST API for automated image, video, and PDF generation from reusable
+    templates. Render templates by overriding layer content, synchronously
+    or asynchronously, and retrieve templates and renders.
+  termsOfService: https://templated.io/terms/
+  contact:
+    name: Templated Support
+    url: https://templated.io/
+  version: '1.0'
+servers:
+  - url: https://api.templated.io/v1
+paths:
+  /render:
+    post:
+      operationId: createRender
+      tags:
+        - Renders
+      summary: Create a render
+      description: >-
+        Generates an image, PDF, or video from a template by applying layer
+        overrides. Renders are synchronous by default (around 2 seconds);
+        set async to true to render in the background and receive a webhook
+        callback on completion.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRenderRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Render'
+        '401':
+          description: Unauthorized
+        '422':
+          description: Unprocessable Entity
+  /render/{id}:
+    get:
+      operationId: getRender
+      tags:
+        - Renders
+      summary: Retrieve a render
+      description: Retrieves a single Render object referenced by its unique ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The unique ID of the render.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Render'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+    delete:
+      operationId: deleteRender
+      tags:
+        - Renders
+      summary: Delete a render
+      description: Deletes a Render object referenced by its unique ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The unique ID of the render.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+  /renders:
+    get:
+      operationId: listRenders
+      tags:
+        - Renders
+      summary: List all renders
+      description: Lists Render objects in the account with pagination.
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page number.
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          description: Number of results per page.
+          schema:
+            type: integer
+            default: 25
+        - name: externalId
+          in: query
+          description: Filter renders by external ID.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Render'
+        '401':
+          description: Unauthorized
+  /templates:
+    get:
+      operationId: listTemplates
+      tags:
+        - Templates
+      summary: List all templates
+      description: Lists Template objects in the account with search, filtering, and pagination.
+      parameters:
+        - name: query
+          in: query
+          description: Search templates by name.
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Pagination page number.
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          description: Number of results per page.
+          schema:
+            type: integer
+            default: 25
+        - name: width
+          in: query
+          description: Filter by template width.
+          schema:
+            type: integer
+        - name: height
+          in: query
+          description: Filter by template height.
+          schema:
+            type: integer
+        - name: tags
+          in: query
+          description: Filter by comma-separated tags.
+          schema:
+            type: string
+        - name: externalId
+          in: query
+          description: Filter by external ID.
+          schema:
+            type: string
+        - name: includeLayers
+          in: query
+          description: Include template layers in the response.
+          schema:
+            type: boolean
+            default: false
+        - name: includePages
+          in: query
+          description: Include template pages and layers in the response.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Template'
+        '401':
+          description: Unauthorized
+  /template/{id}:
+    get:
+      operationId: getTemplate
+      tags:
+        - Templates
+      summary: Retrieve a template
+      description: Retrieves a single Template object referenced by its unique ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The unique ID of the template.
+          schema:
+            type: string
+        - name: includeLayers
+          in: query
+          description: Include template layers in the response.
+          schema:
+            type: boolean
+            default: false
+        - name: includePages
+          in: query
+          description: Include template pages and layers in the response.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        The API key must be included in all requests in the Authorization
+        header as a Bearer token. Obtain an API key from the account
+        dashboard at app.templated.io.
+  schemas:
+    CreateRenderRequest:
+      type: object
+      properties:
+        template:
+          type: string
+          description: ID of the template to render. Required unless templates is provided.
+        templates:
+          type: array
+          description: Array of template IDs for batch rendering. Overrides template when present.
+          items:
+            type: string
+        layers:
+          type: object
+          description: Layer modifications to apply, keyed by layer name.
+          additionalProperties: true
+        pages:
+          type: array
+          description: Page-specific layer modifications for multi-page templates.
+          items:
+            type: object
+            additionalProperties: true
+        format:
+          type: string
+          description: Output format.
+          enum:
+            - jpg
+            - png
+            - webp
+            - pdf
+            - mp4
+            - html
+          default: jpg
+        transparent:
+          type: boolean
+          description: Make the PNG background transparent.
+          default: false
+        width:
+          type: integer
+          description: Custom output width in pixels (100-5000).
+        height:
+          type: integer
+          description: Custom output height in pixels (100-5000).
+        duration:
+          type: integer
+          description: Video duration in milliseconds (max 90000).
+        fps:
+          type: integer
+          description: Frames per second for video output (1-60).
+        merge:
+          type: boolean
+          description: Merge multi-page renders into a single PDF.
+        zip:
+          type: boolean
+          description: Bundle multiple renders into a ZIP archive.
+        name:
+          type: string
+          description: Custom name for the render.
+        external_id:
+          type: string
+          description: External identifier to associate the render with an entity in your system.
+        async:
+          type: boolean
+          description: Render asynchronously in the background instead of synchronously.
+          default: false
+        webhook_url:
+          type: string
+          description: URL the full Render object is POSTed to when an async render completes.
+      required:
+        - template
+    Render:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the render.
+        status:
+          type: string
+          description: Processing state of the render.
+          enum:
+            - PENDING
+            - COMPLETED
+            - FAILED
+        url:
+          type: string
+          description: URL where the rendered output is stored.
+        width:
+          type: integer
+          description: Output width in pixels.
+        height:
+          type: integer
+          description: Output height in pixels.
+        format:
+          type: string
+          description: Output file format.
+        templateId:
+          type: string
+          description: ID of the source template.
+        templateName:
+          type: string
+          description: Name of the source template.
+        name:
+          type: string
+          description: User-assigned name for the render.
+        externalId:
+          type: string
+          description: Associated external identifier.
+        createdAt:
+          type: string
+          description: Timestamp of render creation.
+    Template:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the template.
+        name:
+          type: string
+          description: Name of the template.
+        width:
+          type: integer
+          description: Template width in pixels.
+        height:
+          type: integer
+          description: Template height in pixels.
+        background:
+          type: string
+          description: Background color value (e.g. "#ffffff" or "rgb(255, 255, 255)").
+        thumbnail:
+          type: string
+          description: URL of the template thumbnail.
+        layers:
+          type: array
+          description: Template layers, included when includeLayers is true.
+          items:
+            type: object
+            additionalProperties: true
+        pages:
+          type: array
+          description: Template pages and their layers, included when includePages is true.
+          items:
+            type: object
+            additionalProperties: true
+        createdAt:
+          type: string
+          description: Timestamp of template creation.
+security:
+  - bearerAuth: []
