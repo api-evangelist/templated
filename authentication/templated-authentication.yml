@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/templated-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: The API key must be included in all requests in the Authorization header as a
+    Bearer token. Obtain an API key from the account dashboard at app.templated.io.
+  sources:
+  - openapi/templated-openapi.yml

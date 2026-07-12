@@ -92,6 +92,10 @@ apis:
     webhook_url on completion, with optional Base64-encoded JSON metadata for tracking
     context.
 common:
+- type: DomainSecurity
+  url: security/templated-domain-security.yml
+- type: Authentication
+  url: authentication/templated-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/templated-io
 - type: LinkedIn
@@ -106,6 +110,8 @@ common:
   url: rate-limits/templated-rate-limits.yml
 - type: FinOps
   url: finops/templated-finops.yml
+- url: https://templated.io/rss.xml
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
