@@ -92,6 +92,8 @@ apis:
     webhook_url on completion, with optional Base64-encoded JSON metadata for tracking
     context.
 common:
+- type: AgenticAccess
+  url: agentic-access/templated-agentic-access.yml
 - type: DomainSecurity
   url: security/templated-domain-security.yml
 - type: Authentication
