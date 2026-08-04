@@ -1,0 +1,16 @@
+{
+  "provider": "templated",
+  "sources": [
+    "templated-renders-api-openapi.yml",
+    "templated-templates-api-openapi.yml"
+  ],
+  "outputs": [
+    "templated-renders-api-openapi.yml",
+    "templated-templates-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
