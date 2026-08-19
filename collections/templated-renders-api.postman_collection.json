@@ -1,0 +1,770 @@
+{
+  "item": [
+    {
+      "id": "1feefbaa-107a-4b9d-87ca-c3f1cc46c7cd",
+      "name": "Renders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2e92dce1-7c46-4cc8-90ae-7781ccfb78ab",
+          "name": "Create a render",
+          "request": {
+            "name": "Create a render",
+            "description": {
+              "content": "Generates an image, PDF, or video from a template by applying layer overrides. Renders are synchronous by default (around 2 seconds); set async to true to render in the background and receive a webhook callback on completion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "render"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"template\": \"<string>\",\n  \"templates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"layers\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"pages\": [\n    {\n      \"key_0\": true,\n      \"key_1\": 6199.770877296982,\n      \"key_2\": 2609\n    },\n    {\n      \"key_0\": false\n    }\n  ],\n  \"format\": \"jpg\",\n  \"transparent\": false,\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"duration\": \"<integer>\",\n  \"fps\": \"<integer>\",\n  \"merge\": \"<boolean>\",\n  \"zip\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"async\": false,\n  \"webhook_url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3c917a34-a25d-4298-a959-9a9e61eab2cb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"template\": \"<string>\",\n  \"templates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"layers\": {\n    \"key_0\": 3564.2874171209482,\n    \"key_1\": 5381,\n    \"key_2\": 8200,\n    \"key_3\": false\n  },\n  \"pages\": [\n    {\n      \"key_0\": 6648.087180754326,\n      \"key_1\": 5211.106977302603\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"format\": \"jpg\",\n  \"transparent\": false,\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"duration\": \"<integer>\",\n  \"fps\": \"<integer>\",\n  \"merge\": \"<boolean>\",\n  \"zip\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"async\": false,\n  \"webhook_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"COMPLETED\",\n  \"url\": \"string\",\n  \"width\": 7854,\n  \"height\": 6826,\n  \"format\": \"string\",\n  \"templateId\": \"string\",\n  \"templateName\": \"string\",\n  \"name\": \"string\",\n  \"externalId\": \"string\",\n  \"createdAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59af73ee-6c10-40fe-ad47-916d34624b54",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"template\": \"<string>\",\n  \"templates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"layers\": {\n    \"key_0\": 3564.2874171209482,\n    \"key_1\": 5381,\n    \"key_2\": 8200,\n    \"key_3\": false\n  },\n  \"pages\": [\n    {\n      \"key_0\": 6648.087180754326,\n      \"key_1\": 5211.106977302603\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"format\": \"jpg\",\n  \"transparent\": false,\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"duration\": \"<integer>\",\n  \"fps\": \"<integer>\",\n  \"merge\": \"<boolean>\",\n  \"zip\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"async\": false,\n  \"webhook_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7107c2b-0afa-4d44-89e5-4f45bb7d14bb",
+              "name": "Unprocessable Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"template\": \"<string>\",\n  \"templates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"layers\": {\n    \"key_0\": 3564.2874171209482,\n    \"key_1\": 5381,\n    \"key_2\": 8200,\n    \"key_3\": false\n  },\n  \"pages\": [\n    {\n      \"key_0\": 6648.087180754326,\n      \"key_1\": 5211.106977302603\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"format\": \"jpg\",\n  \"transparent\": false,\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"duration\": \"<integer>\",\n  \"fps\": \"<integer>\",\n  \"merge\": \"<boolean>\",\n  \"zip\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"async\": false,\n  \"webhook_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1478d7c-68e0-4e7b-afaa-ef616fbf6257",
+          "name": "Retrieve a render",
+          "request": {
+            "name": "Retrieve a render",
+            "description": {
+              "content": "Retrieves a single Render object referenced by its unique ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "render",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The unique ID of the render."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c24b685-51c2-413e-bcc2-16dd5dcf8bb8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"COMPLETED\",\n  \"url\": \"string\",\n  \"width\": 7854,\n  \"height\": 6826,\n  \"format\": \"string\",\n  \"templateId\": \"string\",\n  \"templateName\": \"string\",\n  \"name\": \"string\",\n  \"externalId\": \"string\",\n  \"createdAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34b4b83a-6416-40d7-9129-6f0e7e347d40",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "564db4ae-0688-47e7-a886-bd91c8f5a9c8",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f6b3f620-00b7-4a26-89f2-d9cd0818ea20",
+          "name": "Delete a render",
+          "request": {
+            "name": "Delete a render",
+            "description": {
+              "content": "Deletes a Render object referenced by its unique ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "render",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The unique ID of the render."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf079fff-0d2c-4226-91ac-0be52db2a18d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "058328e7-c27a-406d-bb04-806237707617",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a030314-a29c-48bf-87e0-bda19b6a29af",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "render",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the render."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64608e39-a243-4f25-ba6d-abbccb3eb8e3",
+          "name": "List all renders",
+          "request": {
+            "name": "List all renders",
+            "description": {
+              "content": "Lists Render objects in the account with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "renders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Pagination page number."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "externalId",
+                  "value": "<string>",
+                  "description": "Filter renders by external ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6cafd741-966d-4ff0-9c81-ca782d7cdd01",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "renders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "externalId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"status\": \"FAILED\",\n    \"url\": \"string\",\n    \"width\": 5961,\n    \"height\": 6991,\n    \"format\": \"string\",\n    \"templateId\": \"string\",\n    \"templateName\": \"string\",\n    \"name\": \"string\",\n    \"externalId\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"status\": \"PENDING\",\n    \"url\": \"string\",\n    \"width\": 4818,\n    \"height\": 1925,\n    \"format\": \"string\",\n    \"templateId\": \"string\",\n    \"templateName\": \"string\",\n    \"name\": \"string\",\n    \"externalId\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a833309-4afd-4854-9a1f-618980bb58eb",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "renders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "externalId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.templated.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "65c0b96f-be96-4557-9a9f-0d9d17e5da16",
+    "name": "Templated Renders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for automated image, video, and PDF generation from reusable templates. Render templates by overriding layer content, synchronously or asynchronously, and retrieve templates and renders.\n\nContact Support:\n Name: Templated Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Templated Renders API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Renders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.templated.io/v1/render",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates an image, PDF, or video from a template by applying layer overrides. Renders are synchronous by default (around 2 seconds); set async to true to render in the background and receive a webhook callback on completion."
+        },
+        {
+          "info": {
+            "name": "Retrieve a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/render/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the render."
+              }
+            ]
+          },
+          "docs": "Retrieves a single Render object referenced by its unique ID."
+        },
+        {
+          "info": {
+            "name": "Delete a render",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.templated.io/v1/render/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the render."
+              }
+            ]
+          },
+          "docs": "Deletes a Render object referenced by its unique ID."
+        },
+        {
+          "info": {
+            "name": "List all renders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/renders",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page number."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "externalId",
+                "value": "",
+                "type": "query",
+                "description": "Filter renders by external ID."
+              }
+            ]
+          },
+          "docs": "Lists Render objects in the account with pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

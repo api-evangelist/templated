@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Templated Renders Templates API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/templates",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search templates by name."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page number."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "width",
+                "value": "",
+                "type": "query",
+                "description": "Filter by template width."
+              },
+              {
+                "name": "height",
+                "value": "",
+                "type": "query",
+                "description": "Filter by template height."
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query",
+                "description": "Filter by comma-separated tags."
+              },
+              {
+                "name": "externalId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by external ID."
+              },
+              {
+                "name": "includeLayers",
+                "value": "",
+                "type": "query",
+                "description": "Include template layers in the response."
+              },
+              {
+                "name": "includePages",
+                "value": "",
+                "type": "query",
+                "description": "Include template pages and layers in the response."
+              }
+            ]
+          },
+          "docs": "Lists Template objects in the account with search, filtering, and pagination."
+        },
+        {
+          "info": {
+            "name": "Retrieve a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.templated.io/v1/template/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the template."
+              },
+              {
+                "name": "includeLayers",
+                "value": "",
+                "type": "query",
+                "description": "Include template layers in the response."
+              },
+              {
+                "name": "includePages",
+                "value": "",
+                "type": "query",
+                "description": "Include template pages and layers in the response."
+              }
+            ]
+          },
+          "docs": "Retrieves a single Template object referenced by its unique ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

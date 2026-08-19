@@ -1,0 +1,519 @@
+{
+  "item": [
+    {
+      "id": "b03b3e93-563e-4795-bd7b-53e398d5f4c1",
+      "name": "Templates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9fbd00e6-d2a8-4bff-afc8-a719ed7983d1",
+          "name": "List all templates",
+          "request": {
+            "name": "List all templates",
+            "description": {
+              "content": "Lists Template objects in the account with search, filtering, and pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Search templates by name."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Pagination page number."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "width",
+                  "value": "<integer>",
+                  "description": "Filter by template width."
+                },
+                {
+                  "disabled": false,
+                  "key": "height",
+                  "value": "<integer>",
+                  "description": "Filter by template height."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Filter by comma-separated tags."
+                },
+                {
+                  "disabled": false,
+                  "key": "externalId",
+                  "value": "<string>",
+                  "description": "Filter by external ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeLayers",
+                  "value": "false",
+                  "description": "Include template layers in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "includePages",
+                  "value": "false",
+                  "description": "Include template pages and layers in the response."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d89c378f-5fbd-4eee-8777-988da34392ce",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "width",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "height",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "externalId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeLayers",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includePages",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"width\": 7485,\n    \"height\": 3264,\n    \"background\": \"string\",\n    \"thumbnail\": \"string\",\n    \"layers\": [\n      {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": 5808\n      }\n    ],\n    \"pages\": [\n      {\n        \"key_0\": true\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": 6524\n      }\n    ],\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"width\": 1630,\n    \"height\": 4537,\n    \"background\": \"string\",\n    \"thumbnail\": \"string\",\n    \"layers\": [\n      {\n        \"key_0\": true,\n        \"key_1\": \"string\",\n        \"key_2\": 642.235082431929\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": true,\n        \"key_3\": 4582.570678605127\n      }\n    ],\n    \"pages\": [\n      {\n        \"key_0\": true,\n        \"key_1\": 9208,\n        \"key_2\": 2326.0215639427315\n      },\n      {\n        \"key_0\": 7792,\n        \"key_1\": true\n      }\n    ],\n    \"createdAt\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fcaf81b0-b2d7-4c40-b440-a8b32679eb40",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "width",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "height",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "externalId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeLayers",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includePages",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76bc2893-7539-4442-8685-4c31286a7a9f",
+          "name": "Retrieve a template",
+          "request": {
+            "name": "Retrieve a template",
+            "description": {
+              "content": "Retrieves a single Template object referenced by its unique ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "template",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeLayers",
+                  "value": "false",
+                  "description": "Include template layers in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "includePages",
+                  "value": "false",
+                  "description": "Include template pages and layers in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The unique ID of the template."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f5cbb20-e977-48f7-a172-06fea99878d1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeLayers",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includePages",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the template."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"width\": 1259,\n  \"height\": 4117,\n  \"background\": \"string\",\n  \"thumbnail\": \"string\",\n  \"layers\": [\n    {\n      \"key_0\": 3387,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 8290.392617071377,\n      \"key_1\": 5696.491839351812\n    }\n  ],\n  \"pages\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": 357.84972483422274\n    }\n  ],\n  \"createdAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae1af699-b828-4133-9340-a52a98eaa756",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeLayers",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includePages",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the template."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b5f3a630-0920-4fe2-b343-7b5c71b37356",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "template",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeLayers",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includePages",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The unique ID of the template."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.templated.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d26e43f1-dc6f-402a-8cb1-2f0902e263c0",
+    "name": "Templated Renders Templates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for automated image, video, and PDF generation from reusable templates. Render templates by overriding layer content, synchronously or asynchronously, and retrieve templates and renders.\n\nContact Support:\n Name: Templated Support",
+      "type": "text/plain"
+    }
+  }
+}
