@@ -21,6 +21,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/templated.png
 tags:
+- Image-Generation
+- PDF Generation
+- Templates
+- Rendering
+- Automation
+tags_raw:
 - Image Generation
 - PDF Generation
 - Templates
