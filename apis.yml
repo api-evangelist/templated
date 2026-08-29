@@ -6,6 +6,18 @@ description: Templated is an API for automated image, video, and PDF generation 
   reusable templates. Designers build templates in a drag-and-drop editor, then the
   REST API renders them at scale by overriding layer content, with synchronous and
   asynchronous rendering, batch and multi-page output, and webhook callbacks.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: open
