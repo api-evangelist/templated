@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Templated Renders Templates API
+  title: Templated Templates API
   description: REST API for automated image, video, and PDF generation from reusable templates. Render templates by overriding layer content, synchronously or asynchronously, and retrieve templates and renders.
   termsOfService: https://templated.io/terms/
   contact:
