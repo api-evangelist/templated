@@ -33,7 +33,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/templated.png
 tags:
-- Image-Generation
+- Image Generation
 - PDF Generation
 - Templates
 - Rendering
@@ -44,6 +44,7 @@ tags_raw:
 - Templates
 - Rendering
 - Automation
+- Image-Generation
 created: '2026-06-25'
 modified: '2026-06-25'
 specificationVersion: '0.23'
