@@ -121,46 +121,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    Render:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the render.
-        status:
-          type: string
-          description: Processing state of the render.
-          enum:
-          - PENDING
-          - COMPLETED
-          - FAILED
-        url:
-          type: string
-          description: URL where the rendered output is stored.
-        width:
-          type: integer
-          description: Output width in pixels.
-        height:
-          type: integer
-          description: Output height in pixels.
-        format:
-          type: string
-          description: Output file format.
-        templateId:
-          type: string
-          description: ID of the source template.
-        templateName:
-          type: string
-          description: Name of the source template.
-        name:
-          type: string
-          description: User-assigned name for the render.
-        externalId:
-          type: string
-          description: Associated external identifier.
-        createdAt:
-          type: string
-          description: Timestamp of render creation.
     CreateRenderRequest:
       type: object
       properties:
@@ -230,6 +190,46 @@ components:
           description: URL the full Render object is POSTed to when an async render completes.
       required:
       - template
+    Render:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the render.
+        status:
+          type: string
+          description: Processing state of the render.
+          enum:
+          - PENDING
+          - COMPLETED
+          - FAILED
+        url:
+          type: string
+          description: URL where the rendered output is stored.
+        width:
+          type: integer
+          description: Output width in pixels.
+        height:
+          type: integer
+          description: Output height in pixels.
+        format:
+          type: string
+          description: Output file format.
+        templateId:
+          type: string
+          description: ID of the source template.
+        templateName:
+          type: string
+          description: Name of the source template.
+        name:
+          type: string
+          description: User-assigned name for the render.
+        externalId:
+          type: string
+          description: Associated external identifier.
+        createdAt:
+          type: string
+          description: Timestamp of render creation.
   securitySchemes:
     bearerAuth:
       type: http
