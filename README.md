@@ -1,4 +1,4 @@
-# Templated (templated)
+# Templated
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,118 +66,126 @@
 
 Templated is an API for automated image, video, and PDF generation from reusable templates. Designers build templates in a drag-and-drop editor, then the REST API renders them at scale by overriding layer content, with synchronous and asynchronous rendering, batch and multi-page output, and webhook callbacks.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/templated/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/templated/refs/heads/main/apis.yml)
+**Areas:** Image Generation · PDF Generation · Templates · Rendering · Automation
 
-## Tags
+## Templated on APIs.io
 
-- Image Generation
-- PDF Generation
-- Templates
-- Rendering
-- Automation
+Everything profiled for Templated is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/templated/](https://apis.io/providers/templated/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (2)
 
-- **Created:** 2026-06-25
-- **Modified:** 2026-06-25
+- [Templated Renders API](https://apis.io/apis/templated/templated-renders-api/) — The Renders API from Templated — 3 operation(s) for renders.
+- [Templated Templates API](https://apis.io/apis/templated/templated-templates-api/) — The Templates API from Templated — 2 operation(s) for templates.
 
-## APIs
+### Published properties
 
-### Templated Render API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Generates an image, PDF, or video from a template by overriding layer content, with synchronous or asynchronous rendering, batch templates, custom dimensions, transparent backgrounds, multi-page merging, and webhook callbacks.
+#### MCP servers (1)
 
-- **Human URL:** [https://templated.io/docs/renders/create/](https://templated.io/docs/renders/create/)
-- **Base URL:** `https://api.templated.io/v1`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [templated](https://apis.io/servers/templated/templated/)
 
-- Render
-- Image
-- PDF
-- Video
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://templated.io/docs/renders/create/)
-- [API Reference](https://templated.io/docs/renders/)
-- [OpenAPI](openapi/templated-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/templated.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/templated.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Templated Agentic Access](https://apis.io/agentic-access/templated/templated-agentic-access/)
 
-### Templated Templates API
+#### Collections (3)
 
-Lists and retrieves Template objects with optional layer and page data, supporting search, tag, dimension, and external-ID filtering plus pagination.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://templated.io/docs/templates/list/](https://templated.io/docs/templates/list/)
-- **Base URL:** `https://api.templated.io/v1`
+- [Templated API](https://apis.io/collections/templated/open-templated/)
+- [Templated Renders API](https://apis.io/collections/templated/open-templated-renders-api/)
+- [Templated Renders Templates API](https://apis.io/collections/templated/open-templated-templates-api/)
 
-#### Tags
+#### Security (2)
 
-- Templates
-- Layers
-- Designs
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Templated Authentication](https://apis.io/security/templated/templated-authentication/)
+- [Templated Domain Security](https://apis.io/security/templated/templated-domain-security/)
 
-- [Documentation](https://templated.io/docs/templates/list/)
-- [API Reference](https://templated.io/docs/templates/retrieve/)
-- [OpenAPI](openapi/templated-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/templated.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/templated.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Templated Renders API
+Published plans, tiers and prices.
 
-Retrieves and lists previously generated Render objects, exposing their status (PENDING, COMPLETED, FAILED), output URL, dimensions, format, and source template.
+- [Templated Plans Pricing](https://apis.io/plans/templated/templated-plans-pricing/)
 
-- **Human URL:** [https://templated.io/docs/renders/](https://templated.io/docs/renders/)
-- **Base URL:** `https://api.templated.io/v1`
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Renders
-- Status
-- History
+- [Templated Rate Limits](https://apis.io/rate-limits/templated/templated-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://templated.io/docs/renders/)
-- [API Reference](https://templated.io/docs/renders/)
-- [OpenAPI](openapi/templated-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/templated.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/templated.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-### Templated Webhooks API
+- [Templated Finops](https://apis.io/finops/templated/templated-finops/)
 
-Asynchronous renders POST the completed Render object to a caller-supplied webhook_url on completion, with optional Base64-encoded JSON metadata for tracking context.
+## Where to find this API
 
-- **Human URL:** [https://templated.io/docs/renders/create/](https://templated.io/docs/renders/create/)
-- **Base URL:** `https://api.templated.io/v1`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Webhooks
-- Async
-- Callbacks
-
-#### Properties
-
-- [Documentation](https://templated.io/docs/renders/create/)
-- [OpenAPI](openapi/templated-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/templated.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/templated.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/templated-io)
-- [LinkedIn](https://www.linkedin.com/company/templated-io)
 - [Website](https://templated.io/)
 - [Documentation](https://templated.io/docs/)
-- [Plans](plans/templated-plans-pricing.yml)
-- [Rate Limits](rate-limits/templated-rate-limits.yml)
-- [Fin Ops](finops/templated-finops.yml)
+- [Blog](https://templated.io/rss.xml)
+- [GitHub](https://github.com/templated-io)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.7** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 50.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 45.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 11.8** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/templated/](https://apis.io/providers/templated/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Templated: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/templated/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
